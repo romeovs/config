@@ -71,7 +71,9 @@ var config = function(opts = {}) {
 
   // get correct config dir
   var base;
-  if ( opts.absolute ) {
+  if ( opts.absolute && opts.base ) {
+    throw new Error(`cannot have both opts.base and opts.absolute`);
+  } else if ( opts.absolute ) {
     base = opts.absolute;
   } else {
     var packdir = find.sync('.', 'package.json');

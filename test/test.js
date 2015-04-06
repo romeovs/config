@@ -104,4 +104,13 @@ describe('reading', function() {
       });
     }).to.not.throw(/config reader/);
   });
+
+  it('should throw when `base` and `absolute` are both set', function() {
+    expect(function() {
+      var c = config({
+        base: 'foo'
+      , absolute: 'bar'
+      });
+    }).to.throw(/cannot have/);
+  });
 });
