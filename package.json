@@ -26,14 +26,13 @@
   "homepage": "https://github.com/romeovs/config",
   "devDependencies": {
     "babel": "^5.0.8",
-    "blanket": "^1.1.6",
+    "blanket": "git://github.com/alex-seville/blanket",
     "chai": "^2.2.0",
     "coveralls": "^2.11.2",
     "mocha": "^2.2.1",
     "mocha-lcov-reporter": "0.0.2"
   },
   "dependencies": {
-    "blanket": "git://github.com/alex-seville/blanket",
     "findup": "^0.1.5",
     "yamljs": "^0.2.1"
   },
