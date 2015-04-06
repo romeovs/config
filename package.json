@@ -1,0 +1,22 @@
+{
+  "name": "config",
+  "version": "1.0.0",
+  "description": "Easily acces config files in a node project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/romeovs/config.git"
+  },
+  "keywords": [
+    "config"
+  ],
+  "author": "Romeo Van Snick <romeovs@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romeovs/config/issues"
+  },
+  "homepage": "https://github.com/romeovs/config"
+}
