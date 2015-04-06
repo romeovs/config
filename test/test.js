@@ -113,4 +113,28 @@ describe('reading', function() {
       });
     }).to.throw(/cannot have/);
   });
+
+  it('should merge the defaults in a sane way', function() {
+    var c = config({
+      defaults: {
+        yaml: { def: true }
+      }
+    });
+
+    expect(c.yaml).to
+      .have.property('def')
+        .that.equals(true)
+
+    expect(c.yaml).to
+      .have.property('yaml')
+        .that.equals(true)
+
+    expect(c.yaml).to
+      .have.property('js')
+        .that.equals(false)
+
+    expect(c.yaml).to
+      .have.property('json')
+        .that.equals(false)
+  });
 });

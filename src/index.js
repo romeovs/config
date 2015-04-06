@@ -20,7 +20,7 @@ var pathname = function(pth) {
 
 // reads all the files in
 // the base path
-var readAll = function(base, readers, ignore = false) {
+var readAll = function(base, readers, ignore = false, defaults = {}) {
   var files = fs.readdirSync(base);
 
   var config =
@@ -45,9 +45,10 @@ var readAll = function(base, readers, ignore = false) {
       // read file contents
       var str = fs.readFileSync(path.join(base, filename)).toString();
 
-      // add config
-      prev[name] = reader.read(str);
+      // add config, taking defaults into consideration
+      prev[name] = Object.assign(defaults[name] || {}, reader.read(str));
       return prev;
+
     }, {});
 
   return config;
@@ -81,9 +82,8 @@ var config = function(opts = {}) {
   }
 
   // read config
-  var read = readAll(base, opts.readers, opts.ignore);
+  var read = readAll(base, opts.readers, opts.ignore, opts.defaults);
 
-  // assimilate defaults into read object
   return Object.assign(opts.defaults, read);
 };
 
