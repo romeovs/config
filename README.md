@@ -52,6 +52,13 @@ To change which extensions are allowed, take a look at the
 `readers` option.
 
 ## Options
+You can pass options like this:
+
+```js
+var c = config({
+  // options
+});
+```
 
 ### `options.readers`
 These are the readers that `config` uses to read the files.
