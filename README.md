@@ -2,7 +2,6 @@
 
 [![Build
 Status](https://travis-ci.org/romeovs/config.svg)](https://travis-ci.org/romeovs/config)
-
 [![Coverage
 Status](https://coveralls.io/repos/romeovs/config/badge.svg)](https://coveralls.io/r/romeovs/config)
 
