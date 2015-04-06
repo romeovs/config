@@ -2,9 +2,13 @@
   "name": "config",
   "version": "1.0.0",
   "description": "Easily acces config files in a node project",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r babelhook",
+    "compile": "babel src -d build",
+    "coverage": "mocha -r babelhook -r blanket -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js",
+    "hcoverage": "mocha -r babelhook -r blanket -R html-cov >| coverage.html",
+    "jcoverage": "mocha -r babelhook -r blanket -R json-cov >| coverage.json"
   },
   "repository": {
     "type": "git",
@@ -18,5 +22,23 @@
   "bugs": {
     "url": "https://github.com/romeovs/config/issues"
   },
-  "homepage": "https://github.com/romeovs/config"
+  "homepage": "https://github.com/romeovs/config",
+  "devDependencies": {
+    "babel": "^5.0.8",
+    "blanket": "^1.1.6",
+    "chai": "^2.2.0",
+    "coveralls": "^2.11.2",
+    "mocha": "^2.2.1",
+    "mocha-lcov-reporter": "0.0.2"
+  },
+  "dependencies": {
+    "blanket": "git://github.com/alex-seville/blanket",
+    "findup": "^0.1.5",
+    "yamljs": "^0.2.1"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "build"
+    }
+  }
 }
