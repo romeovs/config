@@ -86,6 +86,8 @@ a file is encountered.
 You can provide an object that contains the default configuration.
 `config` will merge the read config with these defaults.
 
+The default config is merged at the level of the config file.
+
 ### `options.base`
 This is the location of the configuration directory that holds all
 the config files, relative to the root directory of the project (the
