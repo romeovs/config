@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha -r babelhook",
     "compile": "babel src -d build",
+    "postinstall": "npm run compile",
     "coverage": "mocha -r babelhook -r blanket -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js",
     "hcoverage": "mocha -r babelhook -r blanket -R html-cov >| coverage.html",
     "jcoverage": "mocha -r babelhook -r blanket -R json-cov >| coverage.json"
