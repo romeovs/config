@@ -1,8 +1,14 @@
 import chai   from 'chai'
-import config from '../build'
+import config from '../src'
 import path   from 'path'
+import Lab    from 'lab'
 
 const expect = chai.expect;
+
+var lab      = Lab.script();
+var describe = lab.describe;
+var it       = lab.it;
+export { lab };
 
 const yaml = {
   yaml: true
@@ -27,13 +33,14 @@ const expected = {
 };
 
 describe('reading', function() {
-  it('should read the config properly', function() {
+  it('should read the config properly', function(done) {
     var c = config();
     expect(c).to
       .deep.equal(expected);
+    done();
   });
 
-  it('should take default config', function() {
+  it('should take default config', function(done) {
     var c = config({
       defaults: {
         d: "ok"
@@ -55,9 +62,10 @@ describe('reading', function() {
     expect(c).to
       .have.property('json')
         .that.deep.equals(json);
+    done();
   });
 
-  it('should allow for absolute paths to be specified', function() {
+  it('should allow for absolute paths to be specified', function(done) {
     var c = config({
       absolute: path.join(__dirname, 'alt')
     });
@@ -66,9 +74,10 @@ describe('reading', function() {
       .have.property('yaml')
       .that.has.property('alt')
       .that.equals(true);
+    done();
   });
 
-  it('should allow for relative paths to be specified', function() {
+  it('should allow for relative paths to be specified', function(done) {
     var c = config({
       base: path.join('test', 'alt')
     });
@@ -77,44 +86,49 @@ describe('reading', function() {
       .have.property('yaml')
       .that.has.property('alt')
       .that.equals(true);
+    done();
   });
 
-  it('should throw when duplicate config is present', function() {
+  it('should throw when duplicate config is present', function(done) {
     expect(function() {
       var c = config({
         base: 'wrong'
       });
     }).to.throw(/duplicate/);
+    done();
   });
 
-  it('should throw when no reader is found and ignore is false', function() {
+  it('should throw when no reader is found and ignore is false', function(done) {
     expect(function() {
       var c = config({
         ignore: false
       , readers: []
       });
     }).to.throw(/config reader/);
+    done();
   });
 
-  it('should not throw when no reader is found and ignore is true', function() {
+  it('should not throw when no reader is found and ignore is true', function(done) {
     expect(function() {
       var c = config({
         ignore: true
       , readers: []
       });
     }).to.not.throw(/config reader/);
+    done();
   });
 
-  it('should throw when `base` and `absolute` are both set', function() {
+  it('should throw when `base` and `absolute` are both set', function(done) {
     expect(function() {
       var c = config({
         base: 'foo'
       , absolute: 'bar'
       });
     }).to.throw(/cannot have/);
+    done();
   });
 
-  it('should merge the defaults in a sane way', function() {
+  it('should merge the defaults in a sane way', function(done) {
     var c = config({
       defaults: {
         yaml: { def: true }
@@ -136,5 +150,6 @@ describe('reading', function() {
     expect(c.yaml).to
       .have.property('json')
         .that.equals(false)
+    done();
   });
 });

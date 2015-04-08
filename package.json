@@ -7,9 +7,9 @@
     "test": "mocha -r babelhook",
     "compile": "babel src -d build",
     "postinstall": "npm run compile",
-    "coverage": "mocha -r babelhook -r blanket -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js",
-    "hcoverage": "mocha -r babelhook -r blanket -R html-cov >| coverage.html",
-    "jcoverage": "mocha -r babelhook -r blanket -R json-cov >| coverage.json"
+    "test": "lab -T babel.js -S ",
+    "coverage": "lab -T babel.js -S --coverage -r lcov | ./node_modules/.bin/coveralls",
+    "hcoverage": "lab -T babel.js -S --coverage -r html >| coverage.html && open coverage.html"
   },
   "repository": {
     "type": "git",
@@ -26,11 +26,10 @@
   "homepage": "https://github.com/romeovs/config",
   "devDependencies": {
     "babel": "^5.0.8",
-    "blanket": "git://github.com/alex-seville/blanket",
+    "babel-runtime": "^5.0.11",
     "chai": "^2.2.0",
     "coveralls": "^2.11.2",
-    "mocha": "^2.2.1",
-    "mocha-lcov-reporter": "0.0.2"
+    "lab": "^5.5.1"
   },
   "dependencies": {
     "findup": "^0.1.5",
