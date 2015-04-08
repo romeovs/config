@@ -34,10 +34,5 @@
   "dependencies": {
     "findup": "^0.1.5",
     "yamljs": "^0.2.1"
-  },
-  "config": {
-    "blanket": {
-      "pattern": "build"
-    }
   }
 }
