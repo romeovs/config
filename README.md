@@ -1,10 +1,8 @@
 # config
 
-[![Build
-Status](https://travis-ci.org/romeovs/config.svg)](https://travis-ci.org/romeovs/config)
-[![Coverage
-Status](https://coveralls.io/repos/romeovs/config/badge.svg)](https://coveralls.io/r/romeovs/config)
-
+[![Build Status](https://travis-ci.org/romeovs/config.svg)](https://travis-ci.org/romeovs/config)
+[![Coverage Status](https://coveralls.io/repos/romeovs/config/badge.svg)](https://coveralls.io/r/romeovs/config)
+[![Dependencies](https://david-dm.org/romeovs/config.svg)](https://david-dm.org/romeovs/config)
 
 `config` is a small utility that reads config files from
 your project directory.
