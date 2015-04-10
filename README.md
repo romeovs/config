@@ -98,5 +98,6 @@ If you want to set an absolute path to read config from,
 use this option.  Note that you cannot set `options.base`
 and `options.absolute` at the same time.
 
-
+### License
+This code is licensed under the [ISC license](./LICENSE)
 
