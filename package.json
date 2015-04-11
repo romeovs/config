@@ -5,7 +5,7 @@
   "main": "build/index.js",
   "scripts": {
     "test": "mocha -r babelhook",
-    "compile": "babel src -d build",
+    "compile": "babel --optional runtime src -d build",
     "postinstall": "npm run compile",
     "test": "lab -T babel.js -S ",
     "coverage": "lab -T babel.js -S --coverage -r lcov | ./node_modules/.bin/coveralls",
