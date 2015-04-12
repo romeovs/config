@@ -1,10 +1,10 @@
 # config
-
-[![Build Status](https://travis-ci.org/romeovs/config.svg)](https://travis-ci.org/romeovs/config)
-[![Coverage Status](https://coveralls.io/repos/romeovs/config/badge.svg)](https://coveralls.io/r/romeovs/config)
-[![Dependencies](https://david-dm.org/romeovs/config.svg)](https://david-dm.org/romeovs/config)
-[![devDependencies](https://david-dm.org/romeovs/config/dev-status.svg)](https://david-dm.org/romeovs/config#info=devDependencies)
-[![Join the chat at https://gitter.im/romeovs/config](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/romeovs/config?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://img.shields.io/travis/romeovs/config.svg?style=flat-square)][travis]
+[![Coverage Status](https://img.shields.io/coveralls/romeovs/config.svg?style=flat-square)][coveralls]
+[![Dependencies](https://img.shields.io/david/romeovs/config.svg?style=flat-square)][david]
+[![devDependencies](https://img.shields.io/david/dev/romeovs/config.svg?style=flat-square)][david-dev]
+[![license](https://img.shields.io/badge/license-ISC-373737.svg?style=flat-square)][license]
+[![gitter](https://img.shields.io/badge/GITTER-join%20chat%20→-00d86e.svg?style=flat-square)][gitter]
 
 
 `config` is a small utility that reads config files from
@@ -99,5 +99,11 @@ use this option.  Note that you cannot set `options.base`
 and `options.absolute` at the same time.
 
 ### License
-This code is licensed under the [ISC license](./LICENSE)
+This code is licensed under the [ISC license][license]
 
+[travis]:    https://travis-ci.org/romeovs/config
+[coveralls]: https://coveralls.io/r/romeovs/config?branch=master
+[david]:     https://david-dm.org/romeovs/config#info=dependencies
+[david-dev]: https://david-dm.org/romeovs/config#info=devDependencies
+[gitter]:    https://gitter.im/romeovs/config?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+[license]:   ./LICENSE
